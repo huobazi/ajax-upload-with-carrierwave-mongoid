@@ -1,6 +1,5 @@
 # Ajax Upload With Carrierwave and Mongoid
-使用[file-uploader](https://github.com/valums/file-uploader)是一个用javascrit编写的文件上传libary,在这里我使用[CarrierWave](https://github.com/jnicklas/carrierwave)和mongoid来完成这个功能.
-
+[file-uploader](https://github.com/valums/file-uploader)是一个用 Javascrit 编写的文件上传 Libary,在这里我使用[CarrierWave](https://github.com/jnicklas/carrierwave)和 [Mongoid](https://github.com/mongoid/mongoid) 来完成多文件的无刷新上传功能
 
 # RubyGems
 
