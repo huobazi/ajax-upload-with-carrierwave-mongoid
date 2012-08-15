@@ -1,0 +1,48 @@
+<h1>Ajax Upload With Carrierwave and Mongoid</h1>
+<div id="file-uploader">
+  <noscript>
+    <p>Please enable JavaScript to use file uploader.</p>
+    <!-- or put a simple form for upload here -->
+  </noscript>
+</div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    var uploader = new qq.FileUploader({
+      debug: true,
+      allowedExtensions: ['jpg', 'jpeg', 'png', 'gif'],
+      sizeLimit: 1048576, // max size: 1MB
+      minSizeLimit: 0, // min size
+      multiple: true,
+      element: document.getElementById('file-uploader'),
+      action: '<%= screenshots_path %>',
+      onComplete: function(id, fileName, responseJSON){
+        $.getScript("<%= screenshots_path %>");
+      },
+      onSubmit: function(id, fileName) {
+        uploader.setParams({
+          xx: "xx",
+          yy: 'yy',
+          zz: 'zz',       
+          authenticity_token: "<%= form_authenticity_token.to_s %>"
+        });
+      }
+    });
+
+});
+
+</script>
+<div id ="screenshots_list">
+
+  <% @screenshots.each do |screenshot| %>
+    <div class="screenshot">
+      <a target="_blank" href="<%= screenshot.image.url %>">
+        <img src="<%= screenshot.image.thumb.url %>"> </a>
+      <br/>
+      <%= link_to "Remove", screenshot_path(screenshot.id), :method => :delete, 'data-confirm' => '确定要删除吗?', :remote => true, :class => "remove" %>
+    </div>  
+  <% end %>
+
+</div>

@@ -1,0 +1,13 @@
+// Place all the styles related to the screenshots controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{padding: 20px;}
+h1{margin: 20px; text-align: center}
+#file-uploader{margin: 20px;}
+#screenshots_list{
+  width: 100%;
+  .screenshot{float: left;margin:20px;
+    img{clear:both;}
+    .remove{clear:both;}
+  }
+}

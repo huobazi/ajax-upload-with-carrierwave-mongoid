@@ -1,0 +1,7 @@
+<% @screenshots.each do |screenshot| %>
+  <div class="screenshot">
+  <a target="_blank" href="<%= screenshot.image.url %>">
+  <img src="<%= screenshot.image.thumb.url %>"> </a><br/>
+  <%= link_to "Remove", screenshot_path(screenshot.id), :method => :delete, 'data-confirm' => '确定要删除吗?', :remote => true %>
+  </div>  
+<% end %>
