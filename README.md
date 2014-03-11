@@ -11,6 +11,9 @@ gem 'mini_magick', '3.4'
 gem 'rack-raw-upload', '1.1.0'
 ```
 
+# application.rb
+  config.middleware.use 'Rack::RawUpload'
+
 # Model 
 
 ```ruby
